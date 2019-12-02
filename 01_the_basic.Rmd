@@ -1,5 +1,5 @@
 ---
-title: "very basic flipbook"
+title: "a no-frills flipbook"
 author: "Gina Reynolds, Dec 2019"
 output:
   xaringan::moon_reader:
@@ -13,7 +13,35 @@ output:
 ---
 
 
+---
 
+# preamble
+
+The "YMAL", a preamble that defines settings for your Rmarkdown document, looks like this: 
+
+```r
+---
+title: "a no-frills flipbook"
+author: "Gina Reynolds, Dec 2019"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [ninjutsu]                 
+    nature:
+      ratio: 16:10
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+```
+
+Ninjutsu gives you the side-by-side.
+
+---
+
+In Xaringan, slide breaks are indicated by three dashes `---` at the beginning of a line, with nothing following (not even white space).
+
+"Next slide"
 
 ---
 
@@ -23,17 +51,16 @@ Okay. Let's load the the `flipbookr` package and set some helpful knitr options.
 In a real project, you might set the code chunk option `include` to `FALSE`.
 
 ```{r setup, message = F,  warning = F}
+# you can install flipbooker as follows from github
+# devtools::install_github("EvaMaeRey::flipbookr")
 library(flipbookr)
 
+# setting chunk options that will apply to the rest of the book
 knitr::opts_chunk$set(fig.width = 6, 
                       message = F, 
                       warning = F, 
                       comment = "", 
                       cache = T)
-
-xaringanthemer::mono_accent(
-  code_highlight_color = "rgba(266, 266, 50, .35)",
-  base_color = "#63418A")
 ```
 
 
