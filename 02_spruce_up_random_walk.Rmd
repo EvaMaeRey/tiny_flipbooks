@@ -1,0 +1,123 @@
+---
+title: "A holiday flipbook"
+subtitle: "Sprucing up a random-walk with ggplot2"
+author: "Gina Reynolds, Dec 1, 2019"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["xaringan-themer.css", ninjutsu]
+    nature:
+      ratio: 16:10
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+
+
+```{r setup, include=F}
+library(flipbookr)
+
+knitr::opts_chunk$set(fig.width = 6, message = F, warning = F, 
+                      comment = "", cache = T)
+
+xaringanthemer::mono_accent(
+  code_highlight_color = "rgba(266, 266, 50, .35)",
+  base_color = "#63418A")
+```
+
+---
+
+`r flipbookr::apply_reveal("random_walk_xmas_tree", break_type = "user")`
+
+---
+
+`r flipbookr::apply_reveal("random_walk_xmas_tree")`
+
+
+
+```{r random_walk_xmas_tree, eval = F, echo = F}
+set.seed(93478)
+library(tidyverse)
+# generate random walk
+tibble(id = 1:400) %>% 
+  crossing(time = 1:150) %>% 
+  mutate(displace = rnorm(n = n())) %>% 
+  mutate(displace = 
+           case_when(time == 1 ~ 0,
+                     time != 1 ~ displace)) %>% 
+  group_by(id) %>% 
+  mutate(cum_displace = cumsum(displace)) %>% #REVEAL
+  # "normal" plot of random walk data
+  ggplot() +
+  aes(x = time) +
+  aes(y = cum_displace) +
+  aes(group = id) +
+  geom_path(size = .25) + #REVEAL
+  # sprucing up
+  coord_flip() +
+  scale_x_reverse() +
+  aes(color = displace) +
+  scale_color_gradient2(low = "chartreuse1", 
+                        mid = "darkgreen", 
+                        high = "darkolivegreen", 
+                        guide = F) +
+  theme_void() +
+  theme(plot.background = 
+          element_rect(fill = "goldenrod4",
+                       color = "darkred", 
+                       size = 5)) #REVEAL
+```
+
+---
+
+# A baby tree
+
+Let's make sure we can understand that code to build the random walk data.
+
+---
+
+`r flipbookr::apply_reveal("tree_mini")`
+
+```{r tree_mini, echo = F, eval = F}
+set.seed(93478)
+library(tidyverse)
+# generate random walk
+tibble(id = 1:2) %>% 
+  crossing(time = 1:4) %>% 
+  mutate(displace = rnorm(n = n())) %>% 
+  mutate(displace = 
+           case_when(time == 1 ~ 0,
+                     time != 1 ~ displace)) %>% 
+  group_by(id) %>% 
+  mutate(cum_displace = cumsum(displace)) %>% #REVEAL
+  # "normal" plot of random walk data
+  ggplot() +
+  aes(x = time) +
+  aes(y = cum_displace) +
+  aes(group = id) +
+  geom_path(size = .25) + #REVEAL
+  # sprucing up
+  coord_flip() +
+  scale_x_reverse() +
+  aes(color = displace) +
+  scale_color_gradient2(low = "chartreuse1", 
+                        mid = "darkgreen", 
+                        high = "darkolivegreen", 
+                        guide = F) +
+  theme_void() +
+  theme(plot.background = 
+          element_rect(fill = "goldenrod4",
+                       color = "darkred", 
+                       size = 5)) #REVEAL
+```
+
+
+
+
+
+
+```{css, eval = TRUE, echo = F}
+.remark-code{line-height: 1.5; font-size: 60%}
+```

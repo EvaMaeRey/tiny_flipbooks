@@ -1,0 +1,65 @@
+---
+title: "very basic flipbook"
+author: "Gina Reynolds, Dec 2019"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: [lucy-fonts, ninjutsu]
+    nature:
+      ratio: 16:10
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+
+
+
+
+---
+
+# Set up
+
+Okay. Let's load the the `flipbookr` package and set some helpful knitr options. We also adjust the theme for xaringan.
+In a real project, you might set the code chunk option `include` to `FALSE`.
+
+```{r setup, message = F,  warning = F}
+library(flipbookr)
+
+knitr::opts_chunk$set(fig.width = 6, 
+                      message = F, 
+                      warning = F, 
+                      comment = "", 
+                      cache = T)
+
+xaringanthemer::mono_accent(
+  code_highlight_color = "rgba(266, 266, 50, .35)",
+  base_color = "#63418A")
+```
+
+
+---
+
+`r flipbookr::apply_reveal("basic_plot")`
+
+
+
+```{r basic_plot, echo = F, eval = F, fig.height=5}
+library(tidyverse)
+cars %>%             # the data  #REVEAL
+  filter(speed > 4) %>%  # subset
+  ggplot() +              # pipe to ggplot
+  aes(x = speed) +
+  aes(y = dist) +
+  # Describing what follows
+  geom_point(alpha = .5,
+             size = 3) + #REVEAL
+  aes(color = dist > 50) 
+```
+ 
+
+ 
+
+
+```{css, eval = TRUE, echo = F}
+.remark-code{line-height: 1.5; font-size: 80%}
+```

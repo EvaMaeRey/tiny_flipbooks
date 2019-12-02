@@ -1,3 +1,22 @@
 ]0;~/Google Drive/tiny_flipbooks[?1034hEvangelines-Air:tiny_flipbooks evangelinereynolds$ [KEvangelines-Air:tiny_flipbooks evangelinereynolds$ git init
 Initialized empty Git repository in /Users/evangelinereynolds/Google Drive/tiny_flipbooks/.git/
 ]0;~/Google Drive/tiny_flipbooksEvangelines-Air:tiny_flipbooks evangelinereynolds$ git a.[Kdd .
+]0;~/Google Drive/tiny_flipbooksEvangelines-Air:tiny_flipbooks evangelinereynolds$ gi[K[Kgit commit - [Km "firt[Kst c ommit"
+[master (root-commit) ac80ae9] first commit
+ 5 files changed, 17 insertions(+)
+ create mode 100644 .Rproj.user/C3865889/console06/10245E12
+ create mode 100644 .Rproj.user/C3865889/console06/INDEX001
+ create mode 100644 .Rproj.user/C3865889/sources/s-3403565C/lock_file
+ create mode 100644 .Rproj.user/shared/notebooks/patch-chunk-names
+ create mode 100644 tiny_flipbooks.Rproj
+]0;~/Google Drive/tiny_flipbooksEvangelines-Air:tiny_flipbooks evangelinereynolds$ git puth[K[K[K[K[K[K[K[Kgit remote add origin  https://github.com/EvaMaeRey/tiny_flipbooks.git
+]0;~/Google Drive/tiny_flipbooksEvangelines-Air:tiny_flipbooks evangelinereynolds$ git push -u origin mas ter
+Counting objects: 13, done.
+Delta compression using up to 4 threads.
+Compressing objects:  12% (1/8)   Compressing objects:  25% (2/8)   Compressing objects:  37% (3/8)   Compressing objects:  50% (4/8)   Compressing objects:  62% (5/8)   Compressing objects:  75% (6/8)   Compressing objects:  87% (7/8)   Compressing objects: 100% (8/8)   Compressing objects: 100% (8/8), done.
+Writing objects:   7% (1/13)   Writing objects:  15% (2/13)   Writing objects:  23% (3/13)   Writing objects:  30% (4/13)   Writing objects:  38% (5/13)   Writing objects:  46% (6/13)   Writing objects:  53% (7/13)   Writing objects:  61% (8/13)   Writing objects:  69% (9/13)   Writing objects:  76% (10/13)   Writing objects:  84% (11/13)   Writing objects:  92% (12/13)   Writing objects: 100% (13/13)   Writing objects: 100% (13/13), 1.26 KiB | 321.00 KiB/s, done.
+Total 13 (delta 0), reused 0 (delta 0)
+To https://github.com/EvaMaeRey/tiny_flipbooks.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+[Kmyers-screen-3:tiny_flipbooks evangelinereynolds$ git push[K[K[K[Kadd .
